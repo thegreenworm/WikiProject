@@ -1,0 +1,9 @@
+SELECT count(1) as rowcount
+, round(gt_lat, 1) as rounded_GT_LAT
+, round(gt_lon, 1) as rounded_GT_LON
+FROM newschema.geo_tags
+group by round(gt_lat, 1), round(gt_lon, 1) 
+having count(0) > 1
+order by rowcount desc
+
+
